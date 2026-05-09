@@ -1,35 +1,88 @@
-# Automation Exercise Tests
+# Playwright C# Automation Framework
 
-Automated UI tests created using:
+UI Automation Framework built using **Playwright**, **C#**, **NUnit**, and the **Page Object Model** design pattern.
 
-- C#
-- NUnit
-- Playwright
-- Visual Studio 2022
+## Tested Application
 
-## Tested Website
 https://automationexercise.com/
 
-## Test Cases
+## Technologies Used
 
-1. Verify Home Page Loads
-2. Verify Test Cases Page
-3. Verify Products Page
-4. Verify Login Page
-5. Verify Contact Us Page
-6. Verify Cart Page
-7. Verify API List Page
-8. Verify Product Details Page
-9. Verify Brand Products Page
-10. Verify Category Products Page
+- C#
+- .NET 8
+- Playwright
+- NUnit
+- Visual Studio 2022
+- Git & GitHub
 
-## How To Run
+## Project Structure
 
-1. Open solution in Visual Studio
-2. Build solution
-3. Open Test Explorer
-4. Run All Tests
+- `Base` – base test setup, timeout configuration, screenshots on failure and video recording
+- `Pages` – Page Object classes and reusable page actions
+- `Tests` – automated test cases
+- `Utilities` – reserved for future helper classes
 
-## Result
+## Features
 
-All 10 tests passed successfully.
+- Automated UI testing
+- Page Object Model architecture
+- Screenshot capture on failed tests
+- Video recording for test execution
+- Stable UI validation tests
+- GitHub repository integration
+- Reusable and maintainable test structure
+
+## Automated Test Coverage
+
+The framework currently includes **13 automated tests**, covering:
+
+- Home Page
+- Login Page
+- Login form validation
+- Products Page
+- Search field validation
+- Test Cases Page
+- Contact Us Page
+- Cart Page
+- Cart page content validation
+- API List Page
+- Product Details Page
+- Brand Products Page
+- Category Products Page
+
+## How to Run Tests
+
+Clone the repository:
+
+```bash
+git clone https://github.com/mihaelacoderie-afk/playwright-csharp-automation-framework.git
+```
+
+Navigate to the project folder:
+
+```bash
+cd playwright-csharp-automation-framework
+```
+
+Run the tests:
+
+```bash
+dotnet test
+```
+
+## Test Evidence
+
+The framework includes:
+
+- screenshots on failed tests
+- video recordings for test execution
+
+These help with debugging and provide useful evidence for test results.
+
+## GitHub Repository
+
+https://github.com/mihaelacoderie-afk/playwright-csharp-automation-framework
+
+## Author
+
+Mihaela

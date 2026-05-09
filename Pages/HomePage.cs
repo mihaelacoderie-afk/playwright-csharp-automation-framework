@@ -61,4 +61,29 @@ public class HomePage
     {
         await _page.GotoAsync($"{BaseUrl}category_products/1");
     }
+    public async Task LoginWithInvalidCredentials(string email, string password)
+    {
+        await GoToLoginPage();
+
+        await _page.Locator("input[data-qa='login-email']").FillAsync(email);
+        await _page.Locator("input[data-qa='login-password']").FillAsync(password);
+        await _page.Locator("button[data-qa='login-button']").ClickAsync();
+    }
+
+    public async Task SearchProduct(string productName)
+    {
+        await GoToProductsPage();
+
+        await _page.Locator("#search_product").FillAsync(productName);
+        await _page.Locator("#submit_search").ClickAsync();
+    }
+
+    public async Task AddFirstProductToCart()
+    {
+        await GoToProductsPage();
+
+        await _page.Locator(".product-image-wrapper").First.HoverAsync();
+        await _page.Locator(".overlay-content a.add-to-cart").First.ClickAsync();
+        await _page.GetByRole(AriaRole.Link, new() { Name = "View Cart" }).ClickAsync();
+    }
 }

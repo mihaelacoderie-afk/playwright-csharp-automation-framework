@@ -83,4 +83,31 @@ public class HomePageTests : BaseTest
         await _homePage.GoToCategoryProductsPage();
         await Expect(Page).ToHaveURLAsync(new Regex("category_products/1"));
     }
+    [Test]
+    public async Task VerifyLoginFormFields()
+    {
+        await _homePage.GoToLoginPage();
+
+        await Expect(Page.Locator("input[data-qa='login-email']")).ToBeVisibleAsync();
+        await Expect(Page.Locator("input[data-qa='login-password']")).ToBeVisibleAsync();
+        await Expect(Page.Locator("button[data-qa='login-button']")).ToBeVisibleAsync();
+    }
+
+    [Test]
+    public async Task VerifySearchProductField()
+    {
+        await _homePage.GoToProductsPage();
+
+        await Expect(Page.Locator("#search_product")).ToBeVisibleAsync();
+        await Expect(Page.Locator("#submit_search")).ToBeVisibleAsync();
+    }
+
+    [Test]
+    public async Task VerifyCartPageContent()
+    {
+        await _homePage.GoToCartPage();
+
+        await Expect(Page).ToHaveURLAsync(new Regex("view_cart"));
+        await Expect(Page.Locator("body")).ToBeVisibleAsync();
+    }
 }
